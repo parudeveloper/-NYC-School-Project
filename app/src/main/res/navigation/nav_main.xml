@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_main"
+    app:startDestination="@id/schoolFragment">
+
+    <fragment
+        android:id="@+id/schoolFragment"
+        android:name="com.mvvmnycschool.ui.schoollist.SchoolFragment"
+        android:label="fragment_school"
+        tools:layout="@layout/fragment_school">
+        <action
+            android:id="@+id/action_schoolFragment_to_schoolDetails"
+            app:destination="@id/schoolDetails">
+            <argument
+                android:name="schoolData"
+                app:argType="com.mvvmnycschool.domine.HighSchoolListItem" />
+        </action>
+
+
+    </fragment>
+    <fragment
+        android:id="@+id/schoolDetails"
+        android:name="com.mvvmnycschool.ui.schooldetails.SchoolDetails"
+        android:label="SchoolDetails"
+        tools:layout="@layout/fragment_school_details" >
+        <argument
+            android:name="schoolData"
+            app:argType="com.mvvmnycschool.domine.HighSchoolListItem"/>
+    </fragment>
+
+</navigation>
